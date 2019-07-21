@@ -939,6 +939,7 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
 
 			if (this.settings.autoupdate) {
 				Timer.start();
+				this._clear();
 				this._calculate_offsets(editor_name1, editor_name2, this.changes);
 				this.trace('change', 'offsets time', Timer.stop());
 				this._markup_changes(editor_name1, editor_name2, this.changes);
@@ -1258,7 +1259,6 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
 					// apply change for each line in-between the changed lines
 					for (var j = llf; j <= llt; ++j) {
 						led.addLineClass(j, 'background', clazz.join(' '));
-						led.addLineClass(j, 'background', clazz.join(' '));
 					}
 				}
 
@@ -1310,7 +1310,6 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
 				else {
 					// apply change for each line in-between the changed lines
 					for (var j = rlf; j <= rlt; ++j) {
-						red.addLineClass(j, 'background', clazz.join(' '));
 						red.addLineClass(j, 'background', clazz.join(' '));
 					}
 				}
